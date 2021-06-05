@@ -1,4 +1,4 @@
-export const ApplicationName = 'identity';
+export const ApplicationName = 'sillypub';
 
 export const QueryParameterNames = {
   ReturnUrl: 'returnUrl',

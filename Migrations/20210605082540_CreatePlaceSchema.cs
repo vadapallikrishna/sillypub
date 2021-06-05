@@ -7,7 +7,7 @@ namespace sillypub.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: 'Place',
+                name: "Place",
                 columns: table => new {
                     Id = table.Column<string>(type: "TEXT",nullable: false),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
@@ -15,7 +15,7 @@ namespace sillypub.Migrations
                     PhoneNumber = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table => {
-                    table.PrimaryKey("Place_PK", x => x.Id)
+                    table.PrimaryKey("Place_PK", x => x.Id);
                 }
     
             );
@@ -23,7 +23,7 @@ namespace sillypub.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(name: 'Place');
+            migrationBuilder.DropTable(name: "Place");
         }
     }
 }

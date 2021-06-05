@@ -26,8 +26,8 @@ namespace sillypub.Migrations
                     .HasColumnType("TEXT");
                 b.Property<int>("PhoneNumber")
                     .HasColumnType("INTEGER");
-                b.ToTable("Place")
-            })
+                b.ToTable("Place");
+            });
 #pragma warning restore 612, 618
         }
     }

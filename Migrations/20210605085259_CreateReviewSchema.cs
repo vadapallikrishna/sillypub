@@ -7,7 +7,7 @@ namespace sillypub.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: 'Review',
+                name: "Review",
                 columns: table => new {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
                     Rating = table.Column<int>(type: "INTEGER", nullable: false),
@@ -16,8 +16,8 @@ namespace sillypub.Migrations
                     UserId = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table => {
-                    table.PrimaryKey("Review_PK", x => x.Id),
-                    table.ForeignKey("Review_User", column: x=>x.UserId, principalColumn: "Id", principalTable: "User", OnDelete: ReferentialAction.Cascade)
+                    table.PrimaryKey("Review_PK", x => x.Id);
+                    table.ForeignKey("Review_User", column: x=>x.UserId, principalColumn: "Id", principalTable: "User", onDelete: ReferentialAction.Cascade);
                 }
 
             );
@@ -25,7 +25,7 @@ namespace sillypub.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(name: 'Review');
+            migrationBuilder.DropTable(name: "Review");
         }
     }
 }

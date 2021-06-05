@@ -18,7 +18,7 @@ namespace sillypub.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.6");
 
-            modelBuilder.Entity('sillypub.Models.Review', b => {
+            modelBuilder.Entity("sillypub.Models.Review", b => {
                 b.Property<string>("Id")
                     .HasColumnType("TEXT");
                 b.Property<int>("Rating")
@@ -28,9 +28,13 @@ namespace sillypub.Migrations
                 b.Property<string>("Content")
                     .HasColumnType("TEXT");
                 b.Property<int>("PhoneNumber")
-                    .HasColumnType("INTEGER")
-                b.Property<string>("UserId")
-                    .HasColumnType("TEXT")
+                    .HasColumnType("INTEGER");
+                b.HasOne("sillypub.Models.User", null)
+                    .WithOne()
+                    .HasForeignKey("UserId")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
+                b.ToTable("Review");
             });
 #pragma warning restore 612, 618
         }
